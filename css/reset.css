@@ -1,0 +1,88 @@
+:root{
+    --main: #2B4A8E;
+}
+    
+::selection{background-color: #2B4A8E; color:#fff;}
+::-webkit-selection{background-color: #2B4A8E; color:#fff;}
+::-moz-selection {background: #2B4A8E;color: #fff;}
+
+
+.w1800{max-width:1800px; margin:0 auto;}
+.w1700{max-width:1700px; margin:0 auto;}
+.w1600{max-width:1600px; margin:0 auto;}
+.w1500{max-width:1500px; margin:0 auto;}
+.w1400{max-width:1400px; margin:0 auto;}
+.w1200{max-width:1200px; margin:0 auto;}
+.w1000{max-width:1000px; margin:0 auto;}
+
+
+.clearfix::before {display: block; content: ''; clear: both;}
+.clearfix::after {display: block; content: ''; clear: both;}
+
+
+/* top버튼 */
+#top_btn {border: none !important; color: var(--main) !important; border-radius: 50%; background: #fff !important; box-shadow: 0 0 12px rgba(0,0,0,0.15);}
+#top_btn:hover {border-color: none !important; background: var(--main) !important; color: #fff !important;}
+
+
+/* 팝업 반응형*/
+@media (max-width:700px){
+    .hd_pops{width:95% !important; top:65px !important; left:10px !important;}
+    .hd_pops_con{width:100% !important;}
+    .hd_pops_footer .hd_pops_reject,.hd_pops_footer .hd_pops_close{font-size:12px;}
+}
+
+
+html, body {font-size: 16px;}
+
+input, button {font-size: 0.8rem !important;}
+a.btn, .btn {font-size: 1rem !important;}
+
+.cmt_btn span.total {color: var(--main) !important;}
+.cmt_btn span.total:after {background: var(--main) !important;}
+
+.btn_submit {border:0;background:var(--main) !important; color:#fff;cursor:pointer;border-radius:3px; position: relative; z-index: 1;}
+.btn_submit:hover {background:var(--main) !important;}
+.btn_submit::before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--main); filter: brightness(0.8); -webkit-filter: brightness(0.8); opacity: 0; z-index: -1; border-radius: 3px;}
+.btn_submit:hover::before {opacity: 0.5;}
+
+
+.pg_current {background:var(--main) !important;color:#fff; border:1px solid var(--main) !important;}
+.pg_page:hover{background-color:#f9f9f9 !important;}
+
+
+/* 한글 에스코어 드림 */
+@font-face {
+font-family: 'SCoreDream';
+src: url('../fonts/S-CoreDream-3Light.woff2') format('woff2');
+font-weight: 300;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'SCoreDream';
+src: url('../fonts/S-CoreDream-4Regular.woff2') format('woff2');
+font-weight: 400;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'SCoreDream';
+src: url('../fonts/S-CoreDream-5Medium.woff2') format('woff2');
+font-weight: 500;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'SCoreDream';
+src: url('../fonts/S-CoreDream-6Bold.woff2') format('woff2');
+font-weight: 600;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'SCoreDream';
+src: url('../fonts/S-CoreDream-7ExtraBold.woff2') format('woff2');
+font-weight: 700;
+font-style: normal;
+}

@@ -1,0 +1,8 @@
+# Windows / macOS 탐색기가 만드는 파일
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# 편집 중 임시 파일
+*.tmp
+*~
