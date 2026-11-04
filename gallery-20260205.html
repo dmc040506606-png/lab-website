@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+
+<!-- 반응형 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="024a84">
+<meta name="msapplication-TileColor" content="024a84">
+<meta name="theme-color" content="#ffffff">
+
+
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>2026 BK21 동계 심포지엄 | 한양대학교 RNA Genomics 연구실</title>
+<link rel="stylesheet" href="css/default.css?ver=2303229">
+<link href="css/fontawesome.css" rel="stylesheet">
+<link rel="stylesheet" href="css/slick.css?ver=2303229">
+<link rel="stylesheet" href="css/aos.css">
+
+
+<link rel="stylesheet" href="css/splitting.css">
+<link rel="stylesheet" href="css/splitting-cells.css">
+<link rel="stylesheet" href="skin/board/gallery2/style.css?ver=2303229">
+
+<!-- 검색 등록 -->
+<meta name="google-site-verification" content="EEvPVkp-kn9H3TM84YZsa9mBA92jPzuoxodAfQ-joDk" />
+<meta name="naver-site-verification" content="e45ea29c9f4b7fc9f8f17853569147c270ad31a9" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="NaverBot" content="All"/>
+<meta name="NaverBot" content="index,follow"/>
+<meta name="Yeti" content="All"/>
+<meta name="Yeti" content="index,follow"/>
+<meta name="Googlebot" content="index,follow"/>
+<meta name="daumoa" content="index,follow"/>
+<meta name="robots" content="index,follow">
+<meta name="title" content="한양대 RNA 유전체학 연구실"/>
+<meta name="Publisher" content="한양대 RNA 유전체학 연구실"> 
+<meta name="keywords" content="한양대학교, 한양대학교 RNA 유전체학 연구실, RNA 유전체학 연구실, RNA Genomics 연구실, 한양대학교 최준호 교수님, 한양대학교 연구실, RNA Genomics 연구실, RNA Genomics"/>
+<meta name="description" content="한양대 RNA 유전체학 연구실">
+<meta property="og:type" content="website">
+<meta property="og:title" content="한양대 RNA 유전체학 연구실">
+<meta property="og:description" content="Hanyang University RNA Genomics Lab">
+<!-- <meta property="og:image" content="/images/common/search-logo.png"> -->
+<!-- <meta property="og:image:width" content="200" /> -->
+<!-- <meta property="og:image:height" content="200" /> -->
+
+
+
+
+<!--[if lte IE 8]>
+<script src="js/html5.js"></script>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "";
+var g5_bbs_url   = "bbs";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "sub5_1";
+var g5_sca       = "";
+var g5_editor    = "smarteditor2";
+var g5_cookie_domain = "";
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.menu.js?ver=2304171"></script>
+<script src="js/common.js?ver=2304171"></script>
+<script src="js/wrest.js?ver=2304171"></script>
+<script src="js/placeholders.min.js?ver=2304171"></script>
+<script src="js/slick.min.js?ver=2304171"></script>
+<script src="js/aos.js"></script>
+<script src="js/splitting.min.js"></script>
+ 
+<style>
+/* 안전장치: 스크롤 애니메이션(AOS)이 실행되지 않아도 내용이 투명한 채로 남지 않게 한다 */
+html:not(.aos-ready) [data-aos]{opacity:1!important;transform:none!important;}
+
+/* 줄바꿈. 원본은 p 전체에 word-break:break-all 이 걸려 있어서 좁은 화면에서 영문 제목이
+   'epitr / anscriptome' 처럼 단어 한가운데서 잘렸다.
+   한글은 어절 단위로, 영문은 단어 단위로 끊고, 끊을 자리가 없는 아주 긴 문자열
+   (긴 주소 같은 것)만 예외적으로 자르게 한다.
+   break-all 이 p, .txtCon, .txtInfo 등 여러 선택자에 흩어져 걸려 있어 하나씩 잡기 어렵다.
+   #wrap 아래 전체를 한 번에 덮어쓴다. id 선택자라 클래스 규칙을 이긴다. */
+body,
+#wrap, #wrap *{
+  word-break:keep-all;
+  overflow-wrap:break-word;
+}
+
+/* 메인 배경 사진.
+   원래는 이미지 실제 크기(1920x720) 그대로 표시되는 구조라, 그보다 넓은 모니터에서는
+   양옆에 회색 여백이 생겼다. #visual 높이는 화면 폭별로 이미 정해져 있으므로
+   (620/580/480/450px), 사진이 그 영역을 비율 유지한 채 꽉 채우도록 한다. */
+@media (min-width:1401px){ #visual{height:720px;} }   /* 미디어쿼리가 없는 넓은 화면의 기본 높이 */
+/* height:100%는 조상이 전부 높이를 가져야 전달된다. slick이 만드는 track까지 포함해
+   #visual 아래 전 단계에 높이를 준다. 한 단계라도 빠지면 사진이 납작해진다. */
+#visual .visual-wrap,
+#visual .slick-slider,
+#visual .slick-list,
+#visual .slick-track,
+#visual .slick-slide,
+#visual .slick-slide > div,
+#visual .img-wrap{height:100%!important;}
+#visual .slick-slide img,
+#visual .visual-wrap img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+}
+</style>
+</head>
+<body>
+
+
+<div id="wrap" class="subWrap">
+	<!-- 헤더 -->
+	<header id="header">
+		<style>
+.nav{position:relative; width:100%; z-index:100; margin:0 auto; height:90px; position:fixed; padding: 0 30px; transition:all 0.8s ease;}
+.nav:hover{background: var(--main);}
+.nav:hover #cssmenu ul > li > a{color:#fff;}
+.nav:hover #cssmenu ul > li > a:hover{color:#fff;}
+.nav:hover #cssmenu ul.depth02 > li > a {color: #fff;}
+.nav:hover #cssmenu ul.depth02 > li:hover {background: #fdfdfd78;}
+.nav:hover .cs-logo a.logo-1{background-image:url("images/common/logo.svg");}
+.nav:hover .sch-btn a{color:#fff !important;}
+.nav:hover .sch-btn a:hover{color:#fff !important; background:#2766d6 !important;}
+.nav:hover h1.pc-menu span{background:#fff !important;}
+
+/* header 고정 */
+#header{width:100%; position:fixed; height:90px; top:0; z-index:100; transition:all 0.8s ease;}
+#header.scrollFx{width:100%; position:fixed; height:90px; background: var(--main); top:0; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+#header.scrollFx .nav{height:90px;}
+#header.scrollFx #cssmenu ul > li > a{color:#fff;}
+#header.scrollFx #cssmenu ul > li > a:hover{color: #fff;}
+#header.scrollFx #cssmenu ul.depth02 > li > a {color: #fff;}
+#header.scrollFx .cs-logo a.logo-1{background-image:url("images/common/logo.svg") !important;}
+#header.scrollFx .sch-btn a{color:#fff !important;}
+#header.scrollFx .sch-btn a:hover{color:#fff !important; background:#2766d6 !important;}
+#header.scrollFx h1.pc-menu span{background:#fff !important;}
+
+/* 서브일때 header - 흰색 */
+.sub-hd{background:#fff;}
+.sub-hd #cssmenu ul > li > a{color:#222;}
+.sub-hd .nav .cs-logo a.logo-1{background-image:url("images/common/logo.svg");}
+.sub-hd .nav .sch-btn a{color:#fff !important;}
+.sub-hd .nav .sch-btn a:hover{color:#fff !important; background:#2766d6 !important;}
+.sub-hd .nav h1.pc-menu span{background:#fff !important;}
+
+.sub-hd.scrollFx{margin-top:0px;}
+.sub-hd.scrollFx .headDiv{margin-top:0px !important;}
+#header.scrollFx .cs-logo{top:42px;}
+#header.scrollFx .cs-logo a.logo-top{height:50px !important;}
+#header.scrollFx #gnb .oneD{color:#fff;}
+#header.scrollFx #gnb .oneD{line-height:75px;}
+#header.scrollFx .hd-right .login-top a{color:#10344a !important; border:1px solid rgb(16,52,74,.5) !important;}
+#header.scrollFx .hd-right .login-top a:hover{background:#082b4c !important; border-color:#082b4c !important; color:#fff !important;}
+#header.scrollFx .hd-right .lang-top a{color:#333 !important;}
+#header.scrollFx .hd-right .lang-top li a:before{background:#333 !important;}
+#header.scrollFx h1.pc-menu span{background:#fff !important;}
+
+.nav .hd-wrap{max-width:1600px; margin:0 auto; height:100%; width:100%; display:flex; align-items:center; justify-content:space-between;}
+.nav .cs-logo{display:flex; align-items:center;}
+.nav .cs-logo h1 {display: flex; align-items: center; gap: 12px;}
+.nav .cs-logo a.logo-uni img{max-width: 100%; max-height: 100%;}
+.nav .cs-logo a.logo-1{display:inline-block; width:154px; height:54px; overflow:hidden; background-image:url("images/common/logo.svg"); background-repeat:no-repeat; background-position: center; background-size: cover;}
+
+
+.nav.active{box-shadow:0px 1px 3px rgba(0,0,0,12%); }
+.nav:after{display:block; content:''; clear:both;}
+
+#cssmenu{display:inline-block; height:100%;}
+#cssmenu a{display:block;}
+#cssmenu > ul{display:flex; justify-content:center; gap:40px; transition:all 0.8s ease; height:100%;}
+#cssmenu > ul > li{position:relative; text-align:left;}
+#cssmenu > ul > li > ul.depth02{height:0; position:absolute; display:none; background: #0720598f; box-shadow: 0px 5px 24.3px 2.7px rgb(0 0 0 / 9%); }
+#cssmenu > ul > li:hover > ul{transition:all 0.8s ease; top:90px; left:50%; transform: translateX(-50%); z-index:999; text-align:center; display:block; opacity:1; height:auto;}
+
+#cssmenu > ul > li > a{font-size:20px; font-weight:600; color:#fff; height:100%; display:flex; line-height:1; align-items:center; justify-content:center; position: relative;}
+
+/* {---- nav li a hover 애니메이션 */
+#cssmenu > ul > li > a.menu-tit::before {content:''; display:block; position: absolute; width: 6px; height: 6px; background: #fff; left: 50%; top: 0px; transform: translateX(-50%); opacity: 0; transition: top 0.3s;}
+#cssmenu > ul > li > a:hover:before {opacity: 1; top: 20px;}
+#cssmenu > ul > li.contact > a:hover:before {opacity: 0;}
+
+#cssmenu > ul > li.menubox > a.menu-tit.on::before {opacity: 1; top: 20px;}
+/* nav li a hover 애니메이션 ----} */
+
+/* contact메뉴 */
+#cssmenu > ul > li.contact {display: flex; justify-content: center; align-items: center; transition: all 0.2s;}
+#cssmenu > ul > li.contact a {color: var(--main) !important; background: #fff; font-size: 13px; font-weight: 800; padding: 8px 20px; border-radius: 15px; box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.20); height: auto; transition: all 0.2s;}
+
+.contact a {overflow: hidden;}
+.contact a span{display: inline-block; color: var(--main); position: relative; }
+.contact a:hover span {animation: text-active-animation 1s cubic-bezier(0.4, 0, 0.2, 1) both; animation-delay: calc(30ms * var(--char-index));}
+
+@keyframes text-active-animation { 
+ from { opacity: 0; transform: translateY(30%); } 
+to { opacity: 1.0; transform: translateY(0px); } 
+} 
+
+
+#cssmenu > ul > li > ul.depth02 > li {color: #fff; padding: 5px 15px 8px; width: 180px;}
+#cssmenu > ul > li > ul.depth02 > li > a{font-size:17px; line-height:2.4; font-weight:500; color: #fff; position: relative;}
+
+.nav .nav-right{display:none; align-items:center;}
+.nav .sch-btn{display:flex; gap:10px;}
+.nav .sch-btn a{font-size:17px; color:#fff; background: #1e4ec4; font-weight:600; width:142px; height:56px; display:flex; border-radius:3px; line-height:1; justify-content:center; align-items:center; transition:0.3s;}
+
+/*햄버거메뉴*/
+.nav h1.pc-menu{display:none; position:relative; width:30px; height:20px; text-align:center; cursor:pointer; transition:0.3s;}
+.nav h1.pc-menu button{background:none; border:none; width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:space-between;}
+.nav h1.pc-menu span{width:100%; height:2px; border-radius:1px; background:#fff; display:block; transition:0.3s;}
+.nav h1.pc-menu:hover span{background:#474747;}
+
+.shadow{
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+@media (max-width: 1400px){
+	#cssmenu > ul{gap:40px;}
+	#cssmenu > ul > li > a{font-size:18px;}
+	#cssmenu > ul > li > ul{width:160px;}
+	#cssmenu > ul > li > ul > li > a{font-size:14px;}
+	.nav .sch-btn a{width:133px; height:44px;}
+    .nav .cs-logo a.logo-1{width: 143px; height: 50px;}
+    .nav .cs-logo a.logo-uni {height: 68px;}
+}
+@media (max-width: 1200px){
+    #cssmenu{display:none;}
+    .nav {padding:0 20px;}
+	.nav .nav-right {display: flex;}
+	.nav h1.pc-menu{display:flex; justify-content:center; align-items:center; }
+	.nav .sch-btn{margin-right:17px;}
+	.nav .sch-btn a{font-size:12px; padding:10px 15px; width:auto; height:auto;}
+}
+
+@media (max-width:760px){
+    .nav .cs-logo h1 {gap: 8px;}
+    .nav .cs-logo a.logo-1{width: 120px; height: 42px;}
+    .nav .cs-logo a.logo-uni {height: 57px;}
+	.nav .sch-btn{display:none;}
+}
+
+
+@media (max-width:360px){
+    .nav{height:80px;}
+	#header{height:80px;}
+	#header.scrollFx{height:80px;}
+	#header.scrollFx .nav{height:80px;}
+    .nav .cs-logo a.logo-1{width: 105px; height: 36px;}
+    .nav .cs-logo a.logo-uni {height: 52px;}
+    .nav h1.pc-menu{width:27px; height:18px;}
+}
+
+.nav .nav_logo a img{opacity:0; transform:translate(20px, 0%); transition:all 1s 0.2s ease;}
+.nav .nav_logo.in-view a img{opacity:1; transform:translate(0, 0%); transition:all 1s 0.2s ease;}
+
+.nav #cssmenu > ul > li{opacity:1; transition:all 1s 0.2s ease;}
+.nav.in-view #cssmenu > ul > li{opacity:1; transition:all 1s 0.2s ease;}
+
+/* 우측-전체메뉴 */
+.all-menu{position:fixed; top:0; left:calc(100% - 0px); width:450px; height:100%; background: #ebeef5; overflow:hidden; z-index:110; font-weight:400; transition:1s 0.1s;}
+.all-menu.open{left:calc(100% - 450px);}
+.all-menu > *{color:#fff;}
+.all-menu .inner{position:relative;}
+.all-menu .menu-h{position:relative; width:100%; height:90px; padding:37px 60px 0 60px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;}
+.all-menu .menu-h .sub-logo{position:relative;width:154px;height:58px;background: url("images/common/m-logo.svg")no-repeat center;background-size:100% !important;}
+.all-menu .menu-h .sub-logo a{position:relative; display: block; width: 100%; height: 100%;}
+.all-menu .menu-h .close{position:relative; width:33px; height:33px; background:none; border:0;}
+.all-menu .menu-h .close span{position:absolute; top:0; background:var(--main); width:2px; height:100%;}
+.all-menu .menu-h .close span:first-child{transform:rotate(-45deg); left:15px;}
+.all-menu .menu-h .close span:last-child{transform:rotate(45deg); left:15px;}
+.all-menu .right-info{padding:15px 60px; display:flex;}
+.all-menu .right-info li{position:relative;}
+.all-menu .right-info li a{color:#468ec0; font-weight: 600; font-size:13px;}
+.all-menu .right-info > li + li:before{content:""; display:inline-block; width:1px; height:8px; background:#b2b2b2; margin:0 8px;}
+.all-menu .side-lang{display:none; padding:0px 60px;}
+.all-menu .side-lang span{display:inline-block; padding-right:15px; padding-top:20px;}
+.all-menu .side-lang span a{font-size:14px; color:#fff;}
+.all-menu .menu-box{padding-top:30px; height:calc(100% - 90px); overflow-y:auto;}
+.all-menu .menu-box .box{position:relative; padding:25px 60px; transition:0.5s;}
+.all-menu .menu-box .box:hover{background:#7d7d7d; transition:0.7s;}
+.all-menu .menu-box .box:after{display:block; content:""; position:absolute; bottom:0; transform:translateX(-50%); left:50%; width:calc(100% - 120px); height:1px; background:rgb(23 63 150 / 15%);}
+.all-menu .menu-box h2{font-weight:700; font-size:22px; color:#fff; letter-spacing:-0.25px; line-height:1;}
+.all-menu .menu-box h2 a{color: var(--main);}
+.all-menu .menu-box ul{display:flex; flex-wrap:wrap; flex-direction: column; margin-top: 15px;}
+.all-menu .menu-box ul li a{display:inline-block; font-size:15px; line-height:1.6; color: var(--main); opacity: 0.9; font-weight:400; vertical-align:top; transition:0.2s;}
+.all-menu .menu-box ul li a:hover{font-weight: 600; transition:0.2s;}
+.all-menu .menu-box ul li.detph2:before{display:none;}
+
+@media(max-width: 1280px){
+	.all-menu .menu-h{padding:15px 5% 0 5%;}
+	.all-menu .right-info{padding:15px 5%;}
+	.all-menu .menu-box{height: calc(100% - 150px);padding: 0;}
+	.all-menu .menu-box .box{padding: 25px 5%;}
+	.all-menu .menu-box .box:after{width:calc(100% - 10%);}
+	.all-menu .menu-box .box:hover{background:transparent;}
+}
+
+@media(max-width: 1024px){
+.all-menu .menu-box .box:nth-of-type(3) h2 {margin-bottom: 0;}
+.all-menu .menu-box .box:nth-of-type(4) h2 {margin-bottom: 0;}
+.all-menu .menu-box .box:nth-of-type(5) h2 {margin-bottom: 0;}
+}
+
+@media(max-width:767px){
+	.all-menu{width:80%;}
+	.all-menu.open{left:20%;}	
+	.all-menu .menu-h{height:67px; margin-bottom: 10px;}
+	.all-menu .menu-h .close{width:27px; height:27px; margin-top:-3px;}	
+	.all-menu .menu-box{height:calc(100% - 105px);}
+	.all-menu .menu-box .box{padding:15px 5%;}
+	.all-menu .menu-box h2{font-size:18px;}
+	.all-menu .menu-box ul{margin-top:10px;}
+	.all-menu .menu-box ul li a{font-size:14.5px;}
+	.all-menu .menu-box ul li + li:before{height:12px; margin:0 10px 0 9px; margin-top:6px;}
+}
+
+@media(max-width:640px){
+	.all-menu .side-lang{display:block; padding:0px 5%;}
+}
+
+
+</style>
+
+<div class="nav ani">	
+	<div class="hd-wrap">
+		<!-- 로고 -->
+		<div class="cs-logo">
+			<h1>
+                <a href="index.html" class="logo-uni"><img src="images/common/logo-uni.png" alt="한양대학교 RNA Genomics Lab"></a>
+				<a href="index.html" class="logo-1"></a>
+			</h1>
+		</div>
+		<div id="cssmenu">
+			<ul>
+				<li class="menubox">
+					<a href="professor.html" class="menu-tit">Professor</a>
+				</li>
+				<li class="menubox">
+					<a href="members.html" class="menu-tit">Members</a>
+					<ul class="depth02">
+						<li><a href="members.html">Lab Members</a></li>
+						<li><a href="alumni.html">Alumni</a></li>
+					</ul>
+				</li>
+				<li class="menubox">
+					<a href="research.html" class="menu-tit">Research</a>	
+					<ul class="depth02">
+                        <li><a href="research.html">Current</a></li>
+						
+					</ul>
+				</li>
+				<li class="menubox">
+					<a href="publications.html" class="menu-tit">Publication</a>
+					<!-- <ul class="depth02">
+						<li><a href="publications.html">Journal</a></li>
+						
+					</ul> -->
+				</li>
+                <li class="menubox">
+					<a href="gallery.html" class="menu-tit">Gallery</a>
+				</li>
+				<!--  -->
+				<li class="contact">
+					<a href="contact.html"><span>CONTACT US</span></a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Contact Us 햄버거메뉴 -->
+		<div class="nav-right">
+<!-- 			<div class="sch-btn"> -->
+<!-- 				<a href="gallery.html">Contact Us</a>	 -->
+<!-- 			</div> -->
+			
+			<h1 class="pc-menu">
+				<button class="pc-sm">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</h1>
+		</div>
+	</div>
+</div>
+
+<!--all-menu-->
+<div class="all-menu">
+	<div class="inner">
+		<div class="menu-h">
+			<h1 class="sub-logo">
+				<a href="index.html"></a>
+			</h1>
+			<button type="button" class="close">
+				<span></span>
+				<span></span>
+			</button>			
+		</div>
+        <ul class="right-info">
+						<li></li>
+					</ul>
+		<div class="menu-box">
+			<div class="box">
+				<h2><a href="professor.html">Professor</a></h2>
+			</div>
+			<div class="box">
+				<h2><a href="members.html">Members</a></h2>
+				<ul>
+					<li><a href="members.html">Lab Members</a></li>
+					<li><a href="alumni.html">Alumni</a></li>
+				</ul>
+			</div>
+			<div class="box">
+				<h2><a href="research.html">Research</a></h2>	
+				<ul>
+					<li><a href="research.html">Current</a></li>
+					
+				</ul>
+			</div>
+			<div class="box">
+				<h2><a href="publications.html">Publication</a></h2>
+                <!-- <ul>
+					<li><a href="publications.html">Journal</a></li>
+				</ul>				 -->
+			</div>
+            <div class="box">
+				<h2><a href="gallery.html">Gallery</a></h2>			
+			</div>
+            <!-- <div class="box">
+				<h2></h2>			
+			</div> -->
+			<div class="box">
+				<h2><a href="contact.html">Contact Us</a></h2>
+			</div>
+			
+		</div><!--//menu-box-->
+	</div>
+</div>
+<!--//all-menu-->
+
+<script>
+function myFunction(x) {
+  x.classList.toggle("changeX");
+}
+// header 고정
+$(document).ready(function () {
+	var url = document.location.href;
+	var main = url.match("main");
+
+	if($(window).width()>1280){
+		function scrollFn(){
+			var scTop = $(window).scrollTop();
+			if (scTop >= 100) {
+				$("#header").addClass('scrollFx');
+			} else {
+				$("#header").removeClass('scrollFx');
+			}
+		};
+		$(window).scroll(function(){
+			 scrollFn();
+		});
+	} else {
+		function scrollFn(){
+			var scTop = $(window).scrollTop();
+			if (scTop >= 90) {
+				$("#header").addClass('scrollFx');
+			} else {
+				$("#header").removeClass('scrollFx');
+			}
+		};
+		$(window).scroll(function(){
+			 scrollFn();
+		});
+	}
+});
+</script>
+
+<!--PC전체메뉴-->
+<script>
+$(document).on('click', 'a[href="#none"]', function(e) {
+	e.preventDefault();
+});
+
+function commonJs() {
+	$(document).on("click",".pc-menu",function(){
+		$(".all-menu").addClass("open");
+	});
+	$(document).on("click",".all-menu .close",function(){
+		$(".all-menu").removeClass("open");
+	});
+	$(".all-menu").mouseleave(function(){
+		$(this).stop().removeClass("open");
+	});
+}
+
+$(function(){
+	commonJs();
+});
+
+$('ul.depth02 > li').hover(function(){
+    $(this).closest('#cssmenu > ul > li.menubox').find('a.menu-tit').toggleClass('on');
+});
+
+</script>	</header>
+	<!-- //헤더 -->
+
+    <!-- 상단 비주얼 -->
+	<div id="sVisual">
+        <div class="slogan w1400 ani">
+            <p class="sTitle ani">RNA GENOMICS LAB</p>	
+            <p class="bTitle ani">                
+                					Gallery				
+                <!--                     Gallery                 -->
+            </p>
+        </div>
+
+        <!-- sub_head visual -->
+        <div class="sv">
+			<div class="bg1"></div>
+		</div>
+
+        <!-- 서브메뉴 -->
+        <div class="sub_menu w1400">
+            
+
+<script>
+$(document).ready(function(){
+    $(".btn_s_menu").click(function(){
+        $(".s_menu").toggle();
+    });
+
+	$(".vNav>ul>li").each(function(idx){
+		var line = $(".sub_menu .line");
+		var aThis = $(".vNav>ul>li").eq(idx);
+		aThis.on("mouseover", function(){
+			line.stop().animate({opacity:1, left:aThis.position().left+"px", width:aThis.children("a").innerWidth()+"px"},300);
+		});
+		aThis.on("mouseleave", function(){
+				line.stop().animate({opacity:"0", width:0},300);
+		});
+	});
+});
+</script>
+
+
+
+<div class="vNav" id="page5">
+	<ul>
+		<li id="menu01" class='active'>
+		<a href="gallery.html" class="box5_5_1">Gallery</a></li>
+	</ul>
+	<span class="line"></span>
+</div>
+
+
+ <div class="m_sub_menu">
+    <button type="button" class="btn_s_menu">
+      <span title="Gallery 1 페이지">Gallery</span> <i class="arrow right"></i>
+    </button>
+    <ul class="s_menu">
+		<li id="menu01" class='active'>
+		<a href="gallery.html" class="box5_5_1">Gallery</a></li>
+	</ul>
+  </div>
+
+        </div>
+	</div>
+
+    <!-- 서브_1_a (서브메뉴-하위메뉴) -->
+	<div class="sMenu">
+			</div>
+	<!-- //서브_1_a  -->
+
+    <!-- 컨텐츠 -->
+    <div id="s_content">
+        <div class="area w1400">
+
+
+<script>
+AOS.init({
+once: true,
+duration: 1000
+});
+</script>
+
+
+<!-- 모바일에서 화면 터치시 hover 효과 나타남 -->
+<script>
+    document.addEventListener("touchstart", function() {}, true);
+</script>
+
+<!-- 게시물 읽기 시작 { -->
+
+<article id="bo_v" style="width:100%">
+<style>#bo_v_atc img{max-width:100%;height:auto;}#bo_v_con{word-break:keep-all;}</style>
+    <header>
+        <h2 id="bo_v_title">
+                        <span class="bo_v_tit">
+            2026 BK21 동계 심포지엄</span>
+        </h2>
+    </header>
+
+    <section id="bo_v_info">
+        <h2>페이지 정보</h2>
+        <div class="profile_info">
+        	<div class="pf_img"><img src="img/no_profile.gif" alt="profile_image"></div>
+        	<div class="profile_info_ct">
+        		<p class="name"><span class="sound_only">작성자</span> <strong><span class="sv_member">최고관리자</span></strong></p>
+        		
+        		<p class="info">
+				<!-- <span class="sound_only">댓글</span><strong class="comment"><a href="#bo_vc"> <i class="fa fa-commenting-o" aria-hidden="true"></i> 0건</a></strong> -->
+       		 	
+        		
+        		
+        		<span class="sound_only">조회</span><strong class="hit"><i class="fa fa-eye" aria-hidden="true"></i> 199회</strong>
+        		<strong class="if_date"><span class="sound_only">작성일</span><i class="fa fa-clock-o" aria-hidden="true"></i> 2026-02-05 22:29</strong>
+        		</p>
+    		</div>
+    	</div>
+
+    	<!-- 게시물 상단 버튼 시작 { -->
+	    <div id="bo_v_top">
+	        
+	        <ul class="btn_bo_user bo_v_com">
+				<li><a href="gallery.html" class="btn_b01 btn" title="목록"><i class="fa fa-list" aria-hidden="true"></i><span class="sound_only">목록</span></a></li>
+	            	            	        		        </ul>
+	        
+	        	    </div>
+	    <!-- } 게시물 상단 버튼 끝 -->
+    </section>
+
+    <section id="bo_v_atc">
+        <h2 id="bo_v_atc_title">본문</h2>
+        <div id="bo_v_share">
+        		        	    </div>
+
+        <div id="bo_v_img">
+</div>
+
+        <!-- 본문 내용 시작 { -->
+        <div id="bo_v_con"><p><img src="data/editor/2602/a07e3c08c436e7aaf3a7e52029218641_1770297137_012.png" title="a07e3c08c436e7aaf3a7e52029218641_1770297137_012.png" alt="a07e3c08c436e7aaf3a7e52029218641_1770297137_012.png" /></p><p><a href="data/editor/2602/a07e3c08c436e7aaf3a7e52029218641_1770298055_7189.gif" target="_blank" class="view_image"><img src="data/editor/2602/thumb-a07e3c08c436e7aaf3a7e52029218641_1770298055_7189_800x600.gif" alt="a07e3c08c436e7aaf3a7e52029218641_1770298055_7189.gif"/></a><br style="clear:both;" /><br style="clear:both;" /><a href="data/editor/2602/a07e3c08c436e7aaf3a7e52029218641_1770297782_4893.jpg" target="_blank" class="view_image"><img src="data/editor/2602/thumb-a07e3c08c436e7aaf3a7e52029218641_1770297782_4893_800x437.jpg" alt="a07e3c08c436e7aaf3a7e52029218641_1770297782_4893.jpg"/></a> </p><p style="color:rgb(68,68,68);font-family:SCoreDream;font-size:15px;background-color:rgb(255,255,255);">2026년 한양대학교 생명과학과 BK21 동계 심포지엄에서 우수한 연구 결과를 얻은 한승훈 박사과정생이 대표로 발표를 진행하였습니다.</p><p style="color:rgb(68,68,68);font-family:SCoreDream;font-size:15px;background-color:rgb(255,255,255);">연구에 더욱 더 매진하여 유종의 미를 거둘 수 있기를 응원합니다 ^^</p></div>
+                <!-- } 본문 내용 끝 -->
+
+        
+
+        <!--  추천 비추천 시작 { -->
+                <!-- }  추천 비추천 끝 -->
+    </section>
+
+    
+    
+        
+        <ul class="bo_v_nb">
+        <li class="btn_prv"><span class="nb_tit"><i class="fa fa-chevron-up" aria-hidden="true"></i> 이전글</span><a href="gallery-20260211.html">2026 해외연사 초청 세미나</a> <span class="nb_date">26.02.11</span></li>        <li class="btn_next"><span class="nb_tit"><i class="fa fa-chevron-down" aria-hidden="true"></i> 다음글</span><a href="gallery-20250224.html">2025 2월 학위 수여식</a>  <span class="nb_date">25.02.24</span></li>    </ul>
+    
+    <!--  -->
+</article>
+<!-- } 게시판 읽기 끝 -->
+		</div> <!-- //area -->
+    </div> <!-- //s_content -->
+</div> <!-- //subWrap --> 
+
+    
+    <style>
+footer {padding: 40px 20px 46px; background: #D4D6DB;}
+.footer-wrap {display: flex; justify-content: space-between; transition: all 0.5s;}
+.footer-wrap .footer-left p:first-child {color: #333; font-size: 15px; font-weight: 400; padding-bottom: 10px; word-break: keep-all;} 
+.footer-wrap .footer-left p:last-child {color: #666; font-size: 15px; font-weight: 400; word-break: keep-all;} 
+.footer-wrap .footer-left p:last-child .dsso {color: #666; font-size: 15px; font-weight: 400;} 
+.footer-wrap .footer-left p:last-child .dsso:hover {color: #000;}
+
+/* 패밀리사이트 */
+footer .select_footer {width:190px; height:50px; position: relative;}
+footer .select_footer ul {background: #F4F5F8; bottom:50px; display:none; position:absolute; z-index:100;  width:100%; transition:.3s;}
+footer .select_footer ul.open {display:block;}
+footer .select_footer ul li {color:#2B4A8E; padding: 14px 16px;}
+footer .select_footer ul li a {display:block; width: 100%; height: 100%; font-size:14px; color:#2B4A8E;}
+footer .select_f_btn {background: #F4F5F8; color:#2B4A8E; border: 0; display:block; width:100%; height:100%; text-align:left; text-transform:uppercase; padding: 20px 15px; font-size:14px; font-weight: 700;}
+footer .select_f_btn .ir {width:100%; display:flex; height:100%; align-items:center; justify-content:space-between; font-size: 14px;}
+footer .select_f_btn .ir i {font-size:15px; color:#2B4A8E; font-style: normal; font-weight:bold; margin-right: 4px;}
+
+footer .select_footer ul li:hover {background:#e4e6ed;}
+footer .select_footer ul li:hover a {font-weight: 600;}
+
+@media (max-width: 1400px){
+	footer .select_footer {width: 210px;}
+	footer .select_f_btn {font-size: 16px;}
+}
+
+@media (max-width: 960px){
+    .footer-wrap {flex-direction: column-reverse; align-items: center; gap: 22px;}
+    .footer-left {text-align: center;}
+    .footer-wrap .footer-left p {line-height: 1.4;}
+    .footer-wrap .footer-left p:last-child {font-size: 14px;}
+
+	footer .select_footer {width: 180px;}
+    footer .select_f_btn .ir {font-size: 13px;}
+    footer .select_footer ul li a {font-size: 13px;}
+}
+
+@media (max-width: 767px){
+	footer .select_f_btn {font-size: 15px;}
+}
+</style>
+
+
+<footer>
+    <div class="footer-wrap w1400">
+        <div class="footer-left ani">
+            <p>All the contents in this web are supported by Dr.Choe. We are welcoming new people to join us! </p>
+            <p>Copyright ⓒITstandard. ALL RIGHTS RESERVED. Designed by <a href="http://dsso.kr/" class="dsso" target="_blank">dsso.kr</a></p>
+        </div>
+
+        <!-- Family Site -->
+		<div class="select_footer">
+			<ul>
+				<li><a title="새창으로 이동" target="_blank" href="https://www.hanyang.ac.kr/#none">한양대학교</a></li>
+				<li><a title="새창으로 이동" target="_blank" href="http://www.grad.hanyang.ac.kr/">한양대학교 대학원</a></li>
+				<li><a title="새창으로 이동" target="_blank" href="https://lifescience.hanyang.ac.kr/frontpage.asp?catalogid=lifescience2021&language=ko">한양대학교 생명과학과</a></li>
+			</ul>
+			<button class="select_f_btn" type="button">
+				<span class="ir">FAMILY SITES <i>+</i></span>
+			</button>
+		</div>
+    </div>
+</footer>
+
+
+
+<script>
+// 패밀리사이트
+jQuery(function($) {
+    var foot_select = $('.select_footer ul');
+    var select_btn = $('.select_f_btn');
+    var f_sel_child = $('.select_footer>ul>li>a');
+
+    function show_option() {
+        $(this).parents('.select_footer').find('ul').toggleClass('open');
+        $(this).toggleClass('on');
+    }
+
+    function moveFamsite() {
+        $(this).parents('.select_footer').find('ul').toggleClass('open');
+        select_btn.toggleClass('on');
+    }
+    select_btn.click(show_option);
+    f_sel_child.click(moveFamsite);
+});
+</script>
+
+</div> <!-- //index 전체 wrap -->
+	
+
+    <button type="button" id="top_btn">
+    	<i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span>
+    </button>
+
+    <script>
+    $(function() {
+        $('#top_btn').click(function () {
+        $('html,body').animate({scrollTop: 0}, 400);
+        return false;
+        });
+
+        // top_btn display: none; 해둬야 제대로 됨 -> default.css에서
+        $(window).scroll(function () {
+        if ($(window).scrollTop() > 600) {
+            $('#top_btn').fadeIn(200);
+        }
+        else {
+            $('#top_btn').fadeOut(200);
+        }
+        });
+        
+    });
+    </script>
+
+
+	<script>
+    Splitting();
+
+    //스크롤 애니메이션
+    $(function(){
+        var $animation_elements = $('.ani');
+        var $window = $(window);
+
+        function check_if_in_view() {
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = (window_top_position + window_height);
+        
+        $.each($animation_elements, function() {
+            var $element = $(this);
+            var element_height = $element.outerHeight();
+            var element_top_position = $element.offset().top+ 100;
+            var element_bottom_position = (element_top_position + element_height);
+        
+            //check to see if this current container is within viewport
+            if ((element_bottom_position >= window_top_position) &&
+                (element_top_position <= window_bottom_position)) {
+            $element.addClass('in-view');
+            } else {
+            //$element.removeClass('in-view');
+            }
+        });
+        }
+        $window.on('scroll resize', check_if_in_view);
+        $window.trigger('scroll');
+    });
+    </script>
+
+
+<!-- } 하단 끝 -->
+
+<script>
+$(function() {
+    // 폰트 리사이즈 쿠키있으면 실행
+    font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+});
+</script>
+
+
+
+
+
+<script>if(window.AOS)document.documentElement.className+=" aos-ready";</script>
+</body>
+</html>
+
+<!-- 사용스킨 : gallery2 -->
